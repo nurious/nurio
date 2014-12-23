@@ -8,9 +8,19 @@ Rails.application.routes.draw do
   resources :organizations
 
   resources :organizations do
-    resources :departments do
-      resources :positions
-    end 
+    resources :departments
+  end
+
+  resources :departments do
+    resources :positions
+  end 
+
+  resources :positions do
+    :categories
+  end
+
+  resources :categories do
+    resources :entries    
   end
 
   resources :departments
@@ -19,7 +29,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'organizations#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
