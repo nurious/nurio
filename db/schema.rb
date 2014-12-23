@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141223185320) do
+ActiveRecord::Schema.define(version: 20141223194952) do
+
+  create_table "categories", force: true do |t|
+    t.string   "title"
+    t.integer  "position_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "categories", ["position_id"], name: "index_categories_on_position_id"
 
   create_table "departments", force: true do |t|
     t.string   "name"
@@ -28,5 +37,14 @@ ActiveRecord::Schema.define(version: 20141223185320) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "positions", force: true do |t|
+    t.string   "name"
+    t.integer  "department_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "positions", ["department_id"], name: "index_positions_on_department_id"
 
 end

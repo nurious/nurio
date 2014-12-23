@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
+  resources :categories
+
   resources :positions
 
   resources :organizations
 
   resources :organizations do
-    resources :departments
+    resources :departments do
+      resources :positions
+    end 
   end
 
   resources :departments
