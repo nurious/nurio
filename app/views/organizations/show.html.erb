@@ -24,13 +24,15 @@
       <tr>
         <td><%= department.name %></td>
         <td><%= department.organization.name %></td>
-        <td><%= link_to 'Show', department %></td>
-        <td><%= link_to 'Edit', edit_department_path(department) %></td>
-        <td><%= link_to 'Destroy', department, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', organization_department_path(:organization_id => @organization.id) %></td>
+        <td><%= link_to 'Edit', edit_organization_department_path(:organization_id => @organization.id) %></td>
+        <td><%= link_to 'Destroy', 'departments#destroy', method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<%= render 'departments/form' %>
 
 
 
