@@ -1,6 +1,6 @@
 class DepartmentsController < ApplicationController
   before_action :set_department, only: [:show, :edit, :update, :destroy]
-  before_action :set_organization, only: [:create, :edit, :update, :destroy]
+  before_action :set_organization, only: [:create, :new, :index]
 
   # GET /departments
   # GET /departments.json
@@ -27,7 +27,7 @@ class DepartmentsController < ApplicationController
   # POST /departments.json
   def create
     # @department = Department.new(department_params)
-    @department = @organization.department.new(department_params)
+    @department = @organization.departments.new(department_params)
 
     respond_to do |format|
       if @department.save
@@ -59,7 +59,7 @@ class DepartmentsController < ApplicationController
   def destroy
     @department.destroy
     respond_to do |format|
-      format.html { redirect_to departments_url, notice: 'Department was successfully destroyed.' }
+      format.html { redirect_to organization_departments_url, notice: 'Department was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

@@ -1,4 +1,4 @@
-<%= form_for(organization_departments_path(:organization_id)) do |f| %>
+<%= form_for([@organization, @department]) do |f| %>
   <%# f.hidden_field :organization_id, value: @department.organization.id %>
   <% if @department.errors.any? %>
     <div id="error_explanation">

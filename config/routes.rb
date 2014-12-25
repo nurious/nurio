@@ -8,19 +8,14 @@ Rails.application.routes.draw do
   # resources :organizations
 
   resources :organizations do
-     resources :departments #do
-      # resources :positions do
-      #   resources :categories do
-      #     resources :entries
-      #   end
-      # end
-    # end
+     resources :departments, :only => [:index, :create, :new]
   end
+
+  resources :departments, :except => [:index, :create, :new]
 
   resources :positions do
     resources :categories do
       resources :entries
-
     end
   end
 
