@@ -7,17 +7,35 @@ Rails.application.routes.draw do
 
   # resources :organizations
 
-  resources :organizations do
-     resources :departments, :only => [:index, :create, :new]
-  end
+  # resources :organizations do
+  #    resources :departments, :only => [:index, :create, :new]
+  # end
 
-  resources :departments, :except => [:index, :create, :new]
+  # resources :departments, :except => [:index, :create, :new]
 
-  resources :positions do
-    resources :categories do
-      resources :entries
-    end
-  end
+  # resources :positions do
+  #   resources :categories do
+  #     resources :entries
+  #   end
+  # end
+
+resources :organizations do
+  resources :departments, only: [:index, :new, :create]
+end
+
+resources :departments, except: [:index, :new, :create] do
+  resources :positions, only: [:index, :new, :create]
+end
+
+resources :positions, except: [:index, :new, :create] do
+  resources :categories, only: [:index, :new, :create]
+end
+
+resources :categories, except: [:index, :new, :create] do
+  resources :entries, only: [:index, :new, :create]
+end
+
+resources :entries, except: [:index, :new, :create]
 
   # resources :departments do
   #   resources :positions
