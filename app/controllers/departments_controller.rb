@@ -61,7 +61,7 @@ class DepartmentsController < ApplicationController
   def destroy
     @department.destroy
     respond_to do |format|
-      format.html { redirect_to organization_departments_url(:organization_id), notice: 'Department was successfully destroyed.' }
+      format.html { redirect_to organization_departments_url(@department.organization), notice: 'Department was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
