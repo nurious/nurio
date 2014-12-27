@@ -16,7 +16,7 @@ class PositionsController < ApplicationController
   # GET /positions/new
   def new
     @position = Position.new
-    
+
   end
 
   # GET /positions/1/edit
@@ -31,7 +31,7 @@ class PositionsController < ApplicationController
 
     respond_to do |format|
       if @position.save
-        format.html { redirect_to @position, notice: 'Position was successfully created.' }
+        format.html { redirect_to department_positions_url(@position.department.id), notice: 'Position was successfully created.' }
         format.json { render :show, status: :created, location: @position }
       else
         format.html { render :new }
@@ -59,7 +59,7 @@ class PositionsController < ApplicationController
   def destroy
     @position.destroy
     respond_to do |format|
-      format.html { redirect_to positions_url, notice: 'Position was successfully destroyed.' }
+      format.html { redirect_to department_positions_url(@position.department.id), notice: 'Position was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

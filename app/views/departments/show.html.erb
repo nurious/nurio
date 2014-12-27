@@ -28,9 +28,9 @@
       <tr>
         <td><%= position.name %></td>
         <td><%= position.department.name %></td>
-        <td><%= link_to 'Show', department_positions %></td>
+        <td><%= link_to 'Show', position_path(position) %></td>
         <td><%= link_to 'Edit', edit_position_path(position) %></td>
-        <td><%= link_to 'Destroy', position, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', position_path(position), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -38,7 +38,7 @@
 
 <br>
 
-<%= link_to 'New Position', new_department_position_path %>
+<%= link_to 'New Position', new_department_position_path(@department.id) %>
 <br>
 
 <!-- end of positions index -->
