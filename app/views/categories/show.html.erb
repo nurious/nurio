@@ -10,7 +10,7 @@
   <%= @category.position.name %>
 </p>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Title</th>
@@ -25,7 +25,7 @@
       <tr>
         <td><%= entry.title %></td>
         <td><%= entry.description %></td>
-        <td><%= entry.category %></td>
+        <td><%= entry.category.title %></td>
         <td><%= link_to 'Show', entry %></td>
         <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
         <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
