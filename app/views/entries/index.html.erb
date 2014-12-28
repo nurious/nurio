@@ -15,7 +15,7 @@
       <tr>
         <td><%= entry.title %></td>
         <td><%= entry.description %></td>
-        <td><%= entry.category %></td>
+        <td><%= entry.category.title %></td>
         <td><%= link_to 'Show', entry %></td>
         <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
         <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Entry', new_entry_path %>
+<%= link_to 'New Entry', new_category_entry_path %>

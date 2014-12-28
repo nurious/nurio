@@ -1,5 +1,6 @@
 class EntriesController < ApplicationController
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
+  before_action :set_category, only: [:new, :create, :index]
 
   # GET /entries
   # GET /entries.json
@@ -24,7 +25,8 @@ class EntriesController < ApplicationController
   # POST /entries
   # POST /entries.json
   def create
-    @entry = Entry.new(entry_params)
+    # @entry = Entry.new(entry_params)
+    @entry = @category.entries.new(entry_params)
 
     respond_to do |format|
       if @entry.save
@@ -56,7 +58,7 @@ class EntriesController < ApplicationController
   def destroy
     @entry.destroy
     respond_to do |format|
-      format.html { redirect_to entries_url, notice: 'Entry was successfully destroyed.' }
+      format.html { redirect_to category_entries_url(@entry.category), notice: 'Entry was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -65,6 +67,10 @@ class EntriesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_entry
       @entry = Entry.find(params[:id])
+    end
+
+    def set_category
+      @category = Category.find(params[:category_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
