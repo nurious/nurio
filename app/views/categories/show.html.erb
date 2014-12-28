@@ -7,8 +7,8 @@
 
 <p>
   <strong>Position:</strong>
-  <%= @category.position %>
+  <%= @category.position.name %>
 </p>
 
 <%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<%= link_to 'Back', position_categories_path(@category.position_id) %>

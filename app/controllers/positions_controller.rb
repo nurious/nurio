@@ -11,12 +11,13 @@ class PositionsController < ApplicationController
   # GET /positions/1
   # GET /positions/1.json
   def show
+    @categories = Category.all
   end
 
   # GET /positions/new
   def new
     @position = Position.new
-
+    @category = Category.new
   end
 
   # GET /positions/1/edit
