@@ -1,21 +1,23 @@
 class DepartmentsController < ApplicationController
-  before_action :set_department, only: [:show, :edit, :update, :destroy]
+  before_action :set_department, only: [:update, :destroy, :edit, :show]
+  before_action :set_organization, only: [:create, :new, :index]
 
   # GET /departments
   # GET /departments.json
   def index
-    @departments = Department.all
+    # @departments = Department.all
   end
 
   # GET /departments/1
   # GET /departments/1.json
   def show
+    @positions = @department.positions.all
   end
 
   # GET /departments/new
   def new
     @department = Department.new
-    @organiztion
+    # @organization = @department.organization.find(params[:id])
   end
 
   # GET /departments/1/edit
@@ -25,11 +27,13 @@ class DepartmentsController < ApplicationController
   # POST /departments
   # POST /departments.json
   def create
-    @department = Department.new(department_params)
+    # @department = Department.new(department_params)
+    @department = @organization.departments.new(department_params)
+    # @position = @department.positions.new(position_params)
 
     respond_to do |format|
       if @department.save
-        format.html { redirect_to @department, notice: 'Department was successfully created.' }
+        format.html { redirect_to organization_departments_path, notice: 'Department was successfully created.' }
         format.json { render :show, status: :created, location: @department }
       else
         format.html { render :new }
@@ -57,7 +61,7 @@ class DepartmentsController < ApplicationController
   def destroy
     @department.destroy
     respond_to do |format|
-      format.html { redirect_to departments_url, notice: 'Department was successfully destroyed.' }
+      format.html { redirect_to organization_departments_url(@department.organization), notice: 'Department was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -67,6 +71,10 @@ class DepartmentsController < ApplicationController
     def set_department
       @department = Department.find(params[:id])
     end
+
+    def set_organization
+      @organization = Organization.find(params[:organization_id])
+    end   
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def department_params

@@ -1,29 +1,54 @@
 Rails.application.routes.draw do
-  resources :entries
+  # resources :entries
 
-  resources :categories
+  # resources :categories
 
-  resources :positions
+  # resources :positions
 
-  resources :organizations
+  # resources :organizations
 
-  resources :organizations do
-    resources :departments
-  end
+  # resources :organizations do
+  #    resources :departments, :only => [:index, :create, :new]
+  # end
 
-  resources :departments do
-    resources :positions
-  end 
+  # resources :departments, :except => [:index, :create, :new]
 
-  resources :positions do
-    :categories
-  end
+  # resources :positions do
+  #   resources :categories do
+  #     resources :entries
+  #   end
+  # end
 
-  resources :categories do
-    resources :entries    
-  end
+resources :organizations do
+  resources :departments, only: [:index, :new, :create]
+end
 
-  resources :departments
+resources :departments, except: [:index, :new, :create] do
+  resources :positions, only: [:index, :new, :create]
+end
+
+resources :positions, except: [:index, :new, :create] do
+  resources :categories, only: [:index, :new, :create]
+end
+
+resources :categories, except: [:index, :new, :create] do
+  resources :entries, only: [:index, :new, :create]
+end
+
+resources :entries, except: [:index, :new, :create]
+
+  # resources :departments do
+  #   resources :positions
+  # end 
+
+  # resources :positions do
+  #   :categories
+  # end
+
+  # resources :categories do
+  #   resources :entries    
+  # end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,5 +1,6 @@
 class PositionsController < ApplicationController
   before_action :set_position, only: [:show, :edit, :update, :destroy]
+  before_action :set_department, only: [:index, :new, :create]
 
   # GET /positions
   # GET /positions.json
@@ -10,11 +11,13 @@ class PositionsController < ApplicationController
   # GET /positions/1
   # GET /positions/1.json
   def show
+    @categories = Category.all
   end
 
   # GET /positions/new
   def new
     @position = Position.new
+    @category = Category.new
   end
 
   # GET /positions/1/edit
@@ -24,11 +27,12 @@ class PositionsController < ApplicationController
   # POST /positions
   # POST /positions.json
   def create
-    @position = Position.new(position_params)
+    # @position = Position.new(position_params)
+    @position = @department.positions.new(position_params)
 
     respond_to do |format|
       if @position.save
-        format.html { redirect_to @position, notice: 'Position was successfully created.' }
+        format.html { redirect_to department_positions_url(@position.department.id), notice: 'Position was successfully created.' }
         format.json { render :show, status: :created, location: @position }
       else
         format.html { render :new }
@@ -56,7 +60,7 @@ class PositionsController < ApplicationController
   def destroy
     @position.destroy
     respond_to do |format|
-      format.html { redirect_to positions_url, notice: 'Position was successfully destroyed.' }
+      format.html { redirect_to department_positions_url(@position.department.id), notice: 'Position was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -65,6 +69,10 @@ class PositionsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_position
       @position = Position.find(params[:id])
+    end
+
+    def set_department
+      @department = Department.find(params[:department_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

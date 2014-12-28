@@ -1,14 +1,49 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Department:</strong>
   <%= @department.name %>
 </p>
 
 <p>
   <strong>Organization:</strong>
-  <%= @department.organization %>
+  <%= @department.organization.name %>
 </p>
 
-<%= link_to 'Edit', edit_department_path(@department) %> |
-<%= link_to 'Back', departments_path %>
+<!-- the positions index page -->
+
+<h1>Listing positions</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Department</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @positions.each do |position| %>
+      <tr>
+        <td><%= position.name %></td>
+        <td><%= position.department.name %></td>
+        <td><%= link_to 'Show', position_path(position) %></td>
+        <td><%= link_to 'Edit', edit_position_path(position) %></td>
+        <td><%= link_to 'Destroy', position_path(position), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br><br>
+
+<%= link_to 'New Position', new_department_position_path(@department.id) %>
+<br><br>
+
+<!-- end of positions index -->
+
+
+
+<%= link_to 'Edit', edit_department_path(:id => :organization_id) %> |
+<%= link_to 'Back', organization_departments_path(:organization_id) %>

@@ -1,5 +1,5 @@
-<%= form_for(@department) do |f| %>
-  <%= f.hidden_field :organization_id, value: @department.organization %>
+<%= form_for([@organization, @department]) do |f| %>
+  <%# f.hidden_field :organization_id, value: @department.organization.id %>
   <% if @department.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@department.errors.count, "error") %> prohibited this department from being saved:</h2>
@@ -13,7 +13,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :name, "Department Name" %><br>
     <%= f.text_field :name %>
   </div>
 

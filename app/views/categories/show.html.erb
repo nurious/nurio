@@ -7,8 +7,38 @@
 
 <p>
   <strong>Position:</strong>
-  <%= @category.position %>
+  <%= @category.position.name %>
 </p>
 
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @category.entries.each do |entry| %>
+      <tr>
+        <td><%= entry.title %></td>
+        <td><%= entry.description %></td>
+        <td><%= entry.category.title %></td>
+        <td><%= link_to 'Show', entry %></td>
+        <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
+        <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Entry', new_category_entry_path(@category.id) %>
+
+<br>
+
 <%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<%= link_to 'Back', position_categories_path(@category.position_id) %>

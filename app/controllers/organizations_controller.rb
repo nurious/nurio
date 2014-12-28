@@ -10,6 +10,7 @@ class OrganizationsController < ApplicationController
   # GET /organizations/1
   # GET /organizations/1.json
   def show
+    @department = Department.new
   end
 
   # GET /organizations/new
@@ -25,6 +26,7 @@ class OrganizationsController < ApplicationController
   # POST /organizations.json
   def create
     @organization = Organization.new(organization_params)
+    @department = @organization.departments.new
 
     respond_to do |format|
       if @organization.save

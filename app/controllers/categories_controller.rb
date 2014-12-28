@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_action :set_position, only: [:create, :new, :index]
 
   # GET /categories
   # GET /categories.json
@@ -10,11 +11,13 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
+    @entries = Entry.all
   end
 
   # GET /categories/new
   def new
     @category = Category.new
+
   end
 
   # GET /categories/1/edit
@@ -24,7 +27,8 @@ class CategoriesController < ApplicationController
   # POST /categories
   # POST /categories.json
   def create
-    @category = Category.new(category_params)
+    # @category = Category.new(category_params)
+    @category = @position.categories.new(category_params)
 
     respond_to do |format|
       if @category.save
@@ -56,7 +60,7 @@ class CategoriesController < ApplicationController
   def destroy
     @category.destroy
     respond_to do |format|
-      format.html { redirect_to categories_url, notice: 'Category was successfully destroyed.' }
+      format.html { redirect_to position_categories_url(@category.position), notice: 'Category was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -65,6 +69,10 @@ class CategoriesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_category
       @category = Category.find(params[:id])
+    end
+
+    def set_position
+      @position = Position.find(params[:position_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

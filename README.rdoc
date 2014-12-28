@@ -1,28 +1,10 @@
-== README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+basic data model:
 
-Things you may want to cover:
+Org has many Departments
+Dept has many Positions 
+Position has many categories
+A category has many entries
 
-* Ruby version
+haven't added yet, but an Employee has many entries through an organization
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
