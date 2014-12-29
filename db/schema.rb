@@ -46,10 +46,7 @@ ActiveRecord::Schema.define(version: 20141229203106) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
   end
-
-  add_index "organizations", ["user_id"], name: "index_organizations_on_user_id"
 
   create_table "positions", force: true do |t|
     t.string   "name"
