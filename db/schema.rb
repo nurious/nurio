@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141223195420) do
+ActiveRecord::Schema.define(version: 20141229183935) do
 
   create_table "categories", force: true do |t|
     t.string   "title"
@@ -53,8 +53,10 @@ ActiveRecord::Schema.define(version: 20141223195420) do
     t.integer  "department_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "organization_id"
   end
 
   add_index "positions", ["department_id"], name: "index_positions_on_department_id"
+  add_index "positions", ["organization_id"], name: "index_positions_on_organization_id"
 
 end
