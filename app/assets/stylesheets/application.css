@@ -59,10 +59,27 @@ html, .login, body {
 
 .navbar-headline {
   margin: 0px;
+  font-size: 40px;
+  color: #fff;
+}
+
+.navbar-headline:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-headline-no-white {
+  margin: 0px;
+  font-size: 40px;
+  color: #000;
+}
+
+.navbar-headline-no-white:hover {
+  color: #000;
+  text-decoration: none;
 }
 
 .devise-header {
-  padding-left: 5px;
   color: #fff;
 }
 
@@ -70,11 +87,10 @@ a:hover {
   background-color: transparent;
 }
 
-/*body > header > a:nth-child(3), body > header > a:nth-child(2) {
-  color: #fff;
-}*/
-
-
 .login-links:visited {
   color: #fff;
+}
+
+header {
+  padding-left: 5px;
 }
