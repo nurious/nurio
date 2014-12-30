@@ -29,6 +29,7 @@
   background-color: #fff;
 }
 
+/*Adds gradient on login/signup/edit pages */
 .login {
 background: #b5bdc8; /* Old browsers */
 background: -moz-linear-gradient(-45deg,  #b5bdc8 0%, #828c95 36%, #28343b 100%); /* FF3.6+ */
