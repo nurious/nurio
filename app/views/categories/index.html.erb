@@ -1,10 +1,10 @@
-<h1 class="text-center">Listing categories</h1>
+<h1 class="text-center">Listing Categories</h1>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Position</th>
+      <th class="text-center">Title</th>
+      <th class="text-center">Position</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,9 +12,8 @@
   <tbody>
     <% @categories.each do |category| %>
       <tr>
-        <td><%= category.title %></td>
-        <td><%= category.position.name %></td>
-        <td><%= link_to 'Show', category %></td>
+        <td class="text-center"><%= link_to category.title, category %></td>
+        <td class="text-center"><%= category.position.name %></td>
         <td><%= link_to 'Edit', edit_category_path(category) %></td>
         <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -24,4 +23,6 @@
 
 <br>
 
-<%= link_to 'New Category', new_position_category_path %>
+<div class="text-center">
+  <%= link_to 'New Category', new_position_category_path %>
+</div>
