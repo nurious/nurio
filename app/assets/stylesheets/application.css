@@ -47,6 +47,11 @@ html, .login, body {
   height:100%;
 }
 
+.boot-btn {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 
 /*************************
 *********NAVBAR***********
@@ -65,9 +70,9 @@ a:hover {
   background-color: transparent;
 }
 
-body > header > a:nth-child(3), body > header > a:nth-child(2) {
+/*body > header > a:nth-child(3), body > header > a:nth-child(2) {
   color: #fff;
-}
+}*/
 
 
 .login-links:visited {
