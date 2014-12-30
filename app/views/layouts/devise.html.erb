@@ -9,7 +9,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </head>
 
-<header>
+<header class="devise-header">
   <nav>
     <h1 class="navbar-headline">NURIO</h1>
   </nav>
@@ -23,7 +23,7 @@
     <% end %>
 </header>
 
-  <body>
+  <body  class="login"> <!-- DEVISE LAYOUT -->
     <div class="container">
       <%= yield %>
     </div>

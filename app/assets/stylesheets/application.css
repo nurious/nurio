@@ -13,3 +13,64 @@
  *= require_tree .
  *= require_self
  */
+
+
+/*************************
+******LOGIN/SIGNUP********
+**************************/
+
+.devise-box {
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+  width: 50%;
+  margin: 0px auto;
+  margin-top: 100px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.login {
+background: #b5bdc8; /* Old browsers */
+background: -moz-linear-gradient(-45deg,  #b5bdc8 0%, #828c95 36%, #28343b 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#b5bdc8), color-stop(36%,#828c95), color-stop(100%,#28343b)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(-45deg,  #b5bdc8 0%,#828c95 36%,#28343b 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(-45deg,  #b5bdc8 0%,#828c95 36%,#28343b 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(-45deg,  #b5bdc8 0%,#828c95 36%,#28343b 100%); /* IE10+ */
+background: linear-gradient(135deg,  #b5bdc8 0%,#828c95 36%,#28343b 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5bdc8', endColorstr='#28343b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+background-repeat: no-repeat;
+}
+
+/* This is to make the gradient 100% of the page */
+html, .login, body {
+  margin: 0px;
+  height:100%;
+}
+
+
+/*************************
+*********NAVBAR***********
+**************************/
+
+.navbar-headline {
+  margin: 0px;
+  color: #fff;
+}
+
+.devise-header {
+  padding-left: 5px;
+  color: #fff;
+}
+
+a:hover {
+  background-color: transparent;
+}
+
+body > header > a:nth-child(3), body > header > a:nth-child(2) {
+  color: #fff;
+}
+
+
+.login-links:visited {
+  color: #fff;
+}
