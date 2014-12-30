@@ -17,7 +17,6 @@ class CategoriesController < ApplicationController
   # GET /categories/new
   def new
     @category = Category.new
-
   end
 
   # GET /categories/1/edit
@@ -32,7 +31,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to @category, notice: 'Category was successfully created.' }
+        format.html { redirect_to :back, notice: 'Category was successfully created.' }
         format.json { render :show, status: :created, location: @category }
       else
         format.html { render :new }
@@ -60,10 +59,12 @@ class CategoriesController < ApplicationController
   def destroy
     @category.destroy
     respond_to do |format|
-      format.html { redirect_to position_categories_url(@category.position), notice: 'Category was successfully destroyed.' }
+      format.html { redirect_to :back, notice: 'Category was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
+
+  #redirect_to position_categories_url(@category.position)
 
   private
     # Use callbacks to share common setup or constraints between actions.
