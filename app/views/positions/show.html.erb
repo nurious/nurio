@@ -1,39 +1,62 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @position.name %>
-</p>
+  <h2 class="text-center position-name"><%= @position.name %> Manual</h2>
 
-<p>
-  <strong>Department:</strong>
-  <%= @position.department.name %>
-</p>
+  <h4 class="text-center"><%= @position.department.name %> Department</h4>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Position</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="text-center">
+    <%# link_to 'New Category', new_position_category_path(@position), class: "btn btn-primary", target: "#myModal" %>
+     <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+      New Category
+    </button>
+  </div>
+  <br>
 
-  <tbody>
-    <% @position.categories.each do |category| %>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Add Category</h4>
+        </div>
+        <div class="modal-body">
+          <%= render 'categories/form' %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="text-center">
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= category.title %></td>
-        <td><%= category.position.name %></td>
-        <td><%= link_to 'Show', category %></td>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th class="text-center">Category</th>
+        <th class="text-center">Position</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @position.categories.each do |category| %>
+        <tr>
+          <td><%= link_to category.title, category %></td>
+          <td><%= category.position.name %></td>
+          <td><%= link_to 'Edit', edit_category_path(category) %></td>
+          <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 <br>
-<%= link_to 'New Category', new_position_category_path(@position) %>
 <br><br>
 
-<%= link_to 'Edit', edit_position_path(@position) %> |
-<%= link_to 'Back', department_positions_path(@position.department.id) %>
+<div class="text-center">
+  <%= link_to 'Edit', edit_position_path(@position) %> |
+  <%= link_to 'Back', department_positions_path(@position.department.id) %>
+</div>

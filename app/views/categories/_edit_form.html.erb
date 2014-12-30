@@ -1,4 +1,4 @@
-<%= form_for([@position, @category = Category.new]) do |f| %>
+<%= form_for([@position, @category]) do |f| %>
   <%= f.hidden_field :position_id, value: @category.position %>
   <% if @category.errors.any? %>
     <div id="error_explanation">
