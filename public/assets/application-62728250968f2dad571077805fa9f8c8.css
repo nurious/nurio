@@ -1,0 +1,131 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+
+.new-category{
+	float: right;
+}
+
+.position-name{
+	margin-top: 50px;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+
+/*************************
+******LOGIN/SIGNUP********
+**************************/
+
+
+.devise-box {
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+  width: 50%;
+  margin: 0px auto;
+  margin-top: 100px;
+  text-align: center;
+  background-color: #fff;
+}
+
+/*Adds gradient on login/signup/edit pages */
+.login {
+background: #b5bdc8; /* Old browsers */
+background: -moz-linear-gradient(-45deg,  #b5bdc8 0%, #828c95 36%, #28343b 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#b5bdc8), color-stop(36%,#828c95), color-stop(100%,#28343b)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(-45deg,  #b5bdc8 0%,#828c95 36%,#28343b 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(-45deg,  #b5bdc8 0%,#828c95 36%,#28343b 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(-45deg,  #b5bdc8 0%,#828c95 36%,#28343b 100%); /* IE10+ */
+background: linear-gradient(135deg,  #b5bdc8 0%,#828c95 36%,#28343b 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5bdc8', endColorstr='#28343b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+background-repeat: no-repeat;
+}
+
+/* This is to make the gradient 100% of the page */
+html, .login, body {
+  margin: 0px;
+  height:100%;
+}
+
+.boot-btn {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+/*************************
+*********NAVBAR***********
+**************************/
+
+.navbar-headline {
+  margin: 0px;
+  font-size: 40px;
+  color: #fff;
+}
+
+.navbar-headline:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-headline-no-white {
+  margin: 0px;
+  font-size: 40px;
+  color: #000;
+}
+
+.navbar-headline-no-white:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+.devise-header {
+  color: #fff;
+}
+
+a:hover {
+  background-color: transparent;
+}
+
+.login-links:visited {
+  color: #fff;
+}
+
+header {
+  padding-left: 5px;
+}
