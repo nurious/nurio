@@ -33,7 +33,7 @@ class DepartmentsController < ApplicationController
 
     respond_to do |format|
       if @department.save
-        format.html { redirect_to organization_departments_path, notice: 'Department was successfully created.' }
+        format.html { redirect_to :back, notice: 'Department was successfully created.' }
         format.json { render :show, status: :created, location: @department }
       else
         format.html { render :new }
@@ -61,7 +61,7 @@ class DepartmentsController < ApplicationController
   def destroy
     @department.destroy
     respond_to do |format|
-      format.html { redirect_to organization_departments_url(@department.organization), notice: 'Department was successfully destroyed.' }
+      format.html { redirect_to :back, notice: 'Department was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
