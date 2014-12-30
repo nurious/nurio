@@ -16,4 +16,4 @@
 </p>
 
 <%= link_to 'Edit', edit_entry_path(@entry) %> |
-<%= link_to 'Back', category_entries_path(@entry.category) %>
+<%= link_to 'Back', category_path(@entry.category.id) %>
