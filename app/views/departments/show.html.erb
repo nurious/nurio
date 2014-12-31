@@ -1,49 +1,53 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Department:</strong>
-  <%= @department.name %>
-</p>
 
-<p>
-  <strong>Organization:</strong>
-  <%= @department.organization.name %>
-</p>
+<!-- p id="notice"><%= notice %></p -->
+<div class="page-headline text-center">
+  <h2>
+    <%= @department.name %> Manuals
+  </h2>
 
-<!-- the positions index page -->
+  <h4>
+    <%= @department.organization.name %>
+  </h4>
+</div>
 
-<h1>Listing positions</h1>
+  <!-- the positions index page -->
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Department</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <!-- <h1 class="page-headline text-center">Listing positions</h1> -->
 
-  <tbody>
-    <% @positions.each do |position| %>
+<div class="table-card text-center">
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= position.name %></td>
-        <td><%= position.department.name %></td>
-        <td><%= link_to 'Show', position_path(position) %></td>
-        <td><%= link_to 'Edit', edit_position_path(position) %></td>
-        <td><%= link_to 'Destroy', position_path(position), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th class="text-center">Name</th>
+        <th class="text-center">Department</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br><br>
+    <tbody>
+      <% @positions.each do |position| %>
+        <tr>
+          <td><%= link_to position.name, position_path(position) %></td>
+          <td><%= position.department.name %></td>
+          <td><%# link_to 'Show', position_path(position) %></td>
+          <td><%= link_to '', edit_position_path(position), class: "glyphicon glyphicon-edit" %></td>
+          <td><%= link_to '', position_path(position), method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-trash" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Position', new_department_position_path(@department.id) %>
-<br><br>
+  <br><br>
 
-<!-- end of positions index -->
+  <%= link_to 'New Position', new_department_position_path(@department.id) %>
+  <br><br>
+
+  <!-- end of positions index -->
 
 
 
 <%= link_to 'Edit', edit_department_path(@department) %> |
 <%= link_to 'Back', organization_path(@department.organization) %>
+
+</div>
