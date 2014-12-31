@@ -2,3 +2,33 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+
+/*************************
+*******ENTRY POSTS********
+**************************/
+
+.entry-container {
+  padding: 15px;
+  width: 60%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.entry-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/*************************
+*******ENTRY FORMS********
+**************************/
+
+#entry_title {
+  width: 170px;
+}
+
+#entry_description {
+  width: 342px;
+  height: 151px;
+}

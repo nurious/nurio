@@ -1,6 +1,10 @@
-<h1>Editing entry</h1>
+<h1 class="page-headline text-center">Edit Entry</h1>
 
-<%= render 'form' %>
+<div class="table-card text-center">
 
-<%= link_to 'Show', @entry %> |
-<%= link_to 'Back', category_entries_path(@entry.category) %>
+  <%= render 'edit_form' %>
+
+  <%= link_to 'Show', @entry %> |
+  <%= link_to 'Back', category_entries_path(@entry.category) %>
+
+</div>

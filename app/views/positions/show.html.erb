@@ -1,8 +1,8 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
 
-  <h2 class="text-center position-name"><%= @position.name %> Manual</h2>
+  <h2 class="text-center position-name page-headline"><%= @position.name %> Manual</h2>
 
-  <h4 class="text-center"><%= @position.department.name %> Department</h4>
+  <h4 class="text-center page-headline"><%= @position.department.name %> Department</h4>
 
   <div class="text-center">
     <%# link_to 'New Category', new_position_category_path(@position), class: "btn btn-primary", target: "#myModal" %>
@@ -31,12 +31,12 @@
     </div>
   </div>
 
-<div class="text-center">
+<div class="table-card text-center">
   <table class="table">
     <thead>
       <tr>
         <th class="text-center">Category</th>
-        <th class="text-center">Position</th>
+        <!-- <th class="text-center">Position</th> -->
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -45,18 +45,18 @@
       <% @position.categories.each do |category| %>
         <tr>
           <td><%= link_to category.title, category %></td>
-          <td><%= category.position.name %></td>
-          <td><%= link_to 'Edit', edit_category_path(category) %></td>
-          <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <!-- <td><%= category.position.name %></td> -->
+          <td><%= link_to '', edit_category_path(category), class: "glyphicon glyphicon-edit" %></td>
+          <td><%= link_to '', category, method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-trash" %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
-</div>
 <br>
 <br><br>
 
-<div class="text-center">
-  <%= link_to 'Edit', edit_position_path(@position) %> |
-  <%= link_to 'Back', department_path(@position.department) %>
+  <div class="text-center">
+    <%= link_to 'Edit', edit_position_path(@position) %> |
+    <%= link_to 'Back', department_path(@position.department) %>
+  </div>
 </div>
