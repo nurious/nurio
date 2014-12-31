@@ -2,3 +2,16 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+/*************************
+********ORG FORM**********
+**************************/
+
+#organization_name {
+  width: 170px;
+}
+
+#organization_description {
+  width: 170px;
+  margin-bottom: 10px;
+}
