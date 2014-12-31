@@ -2,3 +2,40 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+
+/*************************
+*****PAGE HEADLINES*******
+**************************/
+
+.page-headlines {
+  color: #fff;
+}
+
+
+/*************************
+*****DEPARTMENTS TABLE****
+**************************/
+
+.glyphicon:hover {
+  text-decoration: none;
+}
+
+.glyphicon-trash {
+  color: #cc0000;
+}
+
+.glyphicon-trash:hover {
+  color: #f00;
+}
+
+.glyphicon-edit:hover {
+  color: #0000ff;
+}
+
+.table-card {
+  background-color: #fff;
+  width: 40%;
+  margin: 0px auto;
+  border-radius: 5px;
+}
