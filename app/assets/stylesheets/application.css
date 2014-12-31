@@ -71,6 +71,7 @@ background-repeat: no-repeat;
 html, .login, body {
   margin: 0px;
   height:100%;
+  background-attachment: fixed;
 }
 
 .boot-btn {
