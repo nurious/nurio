@@ -1,5 +1,8 @@
 class OrganizationsController < ApplicationController
   before_action :set_organization, only: [:show, :edit, :update, :destroy]
+  # before_action :current_org
+  
+  
   #before_action :authenticate_user!
   #before_action :check_new_organization, only: :new
 
@@ -80,4 +83,10 @@ class OrganizationsController < ApplicationController
     def organization_params
       params.require(:organization).permit(:name, :description)
     end
+
+    # def current_org
+    #   if current_user
+    #     redirect_to organization_path(current_user.organization)
+    #   end
+    # end
 end

@@ -15,4 +15,6 @@ private
 	def set_organization
 		@organization = Organization.find_or_create_by(:name => params[:name])
 	end
+
+	
 end
