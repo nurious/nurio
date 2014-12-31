@@ -88,6 +88,7 @@ html, .login, body {
   margin: 0px;
   font-size: 40px;
   color: #fff;
+  font-family: 'Voltaire', sans-serif;
 }
 
 .navbar-headline:hover {
@@ -100,6 +101,7 @@ html, .login, body {
   margin: 0px;
   font-size: 40px;
   color: #fff;
+  font-family: 'Voltaire', sans-serif;
 }
 
 .navbar-headline-no-white:hover {
