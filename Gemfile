@@ -49,3 +49,6 @@ gem 'devise'
 
 gem 'better_errors'
 gem 'binding_of_caller'
+
+# Use Bootsy for WYSIWYG
+gem 'bootsy'
