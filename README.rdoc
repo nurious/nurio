@@ -1,5 +1,4 @@
-https://sheltered-castle-4672.herokuapp.com/
-nurio.co when we pull the trigger
+www.nurio.co
 
 basic data model:
 
