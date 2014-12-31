@@ -21,9 +21,11 @@
       <%= link_to "Sign up", new_user_registration_path %> |
       <%= link_to "Login", new_user_session_path %>
     <% end %>
-    <p>
-      Reputation: <%= current_user.score %>
-    </p>
+    <% if current_user %>
+      <p>
+        Reputation: <%= current_user.score %>
+      </p>
+    <% end %>
 </header>
 
   <body>
