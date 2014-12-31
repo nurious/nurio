@@ -11,6 +11,32 @@
   </h4>
 </div>
 
+<div class="new-position text-center">
+<!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+      New Position
+    </button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">New Position</h4>
+        </div>
+        <div class="modal-body">
+          <%= render 'positions/form' %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <!-- the positions index page -->
 
   <!-- <h1 class="page-headline text-center">Listing positions</h1> -->
@@ -38,10 +64,7 @@
     </tbody>
   </table>
 
-  <br><br>
-
-  <%= link_to 'New Position', new_department_position_path(@department.id) %>
-  <br><br>
+  <%# link_to 'New Position', new_department_position_path(@department.id) %>
 
   <!-- end of positions index -->
 

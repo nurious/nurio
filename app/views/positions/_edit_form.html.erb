@@ -1,5 +1,5 @@
-<%= form_for([@department, @position = Position.new]) do |f| %>
-<%= f.hidden_field :department_id, value: @position.department %>
+<%= form_for([@department, @position]) do |f| %>
+<%# f.hidden_field :department_id, value: @position.department %>
   <% if @position.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@position.errors.count, "error") %> prohibited this position from being saved:</h2>
@@ -21,6 +21,6 @@
     <%# f.text_field :department_id %>
   <!-- </div> -->
   <div class="actions">
-    <%= f.submit class: "btn btn-primary" %>
+    <%= f.submit class: "btn btn-primary update-btn" %>
   </div>
 <% end %>

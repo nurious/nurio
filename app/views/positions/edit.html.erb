@@ -1,6 +1,10 @@
-<h1>Editing position</h1>
+<h1 class="page-headline text-center">Edit Position</h1>
 
-<%= render 'form' %>
+<div class="table-card text-center">
 
-<%= link_to 'Show', position_path %> |
-<%= link_to 'Back', department_path(@position.department) %>
+  <%= render 'edit_form' %>
+
+  <%= link_to 'Show', position_path %> |
+  <%= link_to 'Back', department_path(@position.department) %>
+
+</div>
