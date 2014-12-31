@@ -34,7 +34,7 @@ class EntriesController < ApplicationController
         @entry.save
         current_user.score += 100
         current_user.save
-        format.html { redirect_to @entry, notice: 'Entry was successfully created.' }
+        format.html { redirect_to :back, notice: 'Entry was successfully created.' }
         format.json { render :show, status: :created, location: @entry }
       else
         format.html { render :new }
