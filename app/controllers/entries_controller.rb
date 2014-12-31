@@ -27,9 +27,11 @@ class EntriesController < ApplicationController
   def create
     # @entry = Entry.new(entry_params)
     @entry = @category.entries.new(entry_params)
-
+    
     respond_to do |format|
       if @entry.save
+        current_user.score += 100
+        current_user.save
         format.html { redirect_to @entry, notice: 'Entry was successfully created.' }
         format.json { render :show, status: :created, location: @entry }
       else
@@ -44,6 +46,8 @@ class EntriesController < ApplicationController
   def update
     respond_to do |format|
       if @entry.update(entry_params)
+        current_user.score += 50
+        current_user.save
         format.html { redirect_to @entry, notice: 'Entry was successfully updated.' }
         format.json { render :show, status: :ok, location: @entry }
       else
