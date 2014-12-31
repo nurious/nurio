@@ -1,29 +1,29 @@
-<h1 class="text-center">Listing organizations</h1>
-<div>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @organizations.each do |organization| %>
+<h1 class="text-center page-headline">Listing organizations</h1>
+<div class="table-card">
+    <table class="table">
+      <thead>
         <tr>
-          <td><%= organization.name %></td>
-          <td><%= organization.description %></td>
-          <td><%= link_to 'Show', organization %></td>
-          <td><%= link_to 'Edit', edit_organization_path(organization) %></td>
-          <td><%= link_to 'Destroy', organization, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <th>Name</th>
+          <th>Description</th>
+          <th colspan="3"></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
-<br>
+      </thead>
 
-<div class="text-center">
-  <%= link_to 'New Organization', new_organization_path %>
+      <tbody>
+        <% @organizations.each do |organization| %>
+          <tr>
+            <td><%= link_to organization.name, organization_path(organization) %></td>
+            <td><%= organization.description %></td>
+            <td><%# link_to 'Show', organization %></td>
+            <td><%= link_to '', edit_organization_path(organization), class: "glyphicon glyphicon-edit" %></td>
+            <td><%= link_to '', organization, method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-trash" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <br>
+
+  <div class="text-center">
+    <%= link_to 'New Organization', new_organization_path %>
+  </div>
 </div>
