@@ -15,15 +15,17 @@
     <%= link_to 'nurio', root_path, class: "navbar-headline-no-white", id: "logo" %>
   </nav>
     <% if user_signed_in? %>
-      <!-- Logged in as  --><strong><%= current_user.email %></strong>
-      <p>
-        Reputation: <%= current_user.score %>
-      </p>
+      <div class="logged-in">
+      <!-- Logged in as  -->
+        <strong><%= current_user.email %></strong>
+        
+        <p>
+          Reputation: <%= current_user.score %>
+        </p>
 
-      <p>
-      <%= link_to 'Edit profile', edit_user_registration_path %> |
-      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-      </p>
+        <%= link_to 'Edit profile', edit_user_registration_path %> |
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+      </div>
     <% else %>
       <%= link_to "Sign up", new_user_registration_path %> |
       <%= link_to "Login", new_user_session_path %>
