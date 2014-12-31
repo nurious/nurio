@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141231045101) do
+ActiveRecord::Schema.define(version: 20141231045746) do
 
   create_table "bootsy_image_galleries", force: true do |t|
     t.integer  "bootsy_resource_id"
@@ -51,16 +51,21 @@ ActiveRecord::Schema.define(version: 20141231045101) do
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   add_index "entries", ["category_id"], name: "index_entries_on_category_id"
+  add_index "entries", ["user_id"], name: "index_entries_on_user_id"
 
   create_table "organizations", force: true do |t|
     t.string   "name"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "organizations", ["user_id"], name: "index_organizations_on_user_id"
 
   create_table "positions", force: true do |t|
     t.string   "name"
@@ -72,6 +77,16 @@ ActiveRecord::Schema.define(version: 20141231045101) do
 
   add_index "positions", ["department_id"], name: "index_positions_on_department_id"
   add_index "positions", ["organization_id"], name: "index_positions_on_organization_id"
+
+  create_table "reputations", force: true do |t|
+    t.integer  "score"
+    t.integer  "rank"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reputations", ["user_id"], name: "index_reputations_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -93,5 +108,16 @@ ActiveRecord::Schema.define(version: 20141231045101) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["organization_id"], name: "index_users_on_organization_id"
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "versions", force: true do |t|
+    t.string   "item_type",  null: false
+    t.integer  "item_id",    null: false
+    t.string   "event",      null: false
+    t.string   "whodunnit"
+    t.text     "object"
+    t.datetime "created_at"
+  end
+
+  add_index "versions", ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
 
 end

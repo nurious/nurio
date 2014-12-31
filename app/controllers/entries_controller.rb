@@ -30,6 +30,8 @@ class EntriesController < ApplicationController
     
     respond_to do |format|
       if @entry.save
+        @entry.user_id = current_user.id
+        @entry.save
         current_user.score += 100
         current_user.save
         format.html { redirect_to @entry, notice: 'Entry was successfully created.' }
@@ -79,6 +81,6 @@ class EntriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def entry_params
-      params.require(:entry).permit(:title, :description, :category_id)
+      params.require(:entry).permit(:title, :description, :category_id, :user_id)
     end
 end
