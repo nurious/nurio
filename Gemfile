@@ -46,3 +46,6 @@ end
 
 # Use Devise for authentication
 gem 'devise'
+
+gem 'better_errors'
+gem 'binding_of_caller'
