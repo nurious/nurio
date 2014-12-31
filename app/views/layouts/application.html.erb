@@ -12,7 +12,7 @@
 
 <header>
   <nav>
-    <%= link_to 'nurio', root_path, class: "navbar-headline-no-white" %>
+    <%= link_to 'nurio', root_path, class: "navbar-headline-no-white", id: "logo" %>
   </nav>
     <% if user_signed_in? %>
       <!-- Logged in as  --><strong><%= current_user.email %></strong>
