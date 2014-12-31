@@ -38,7 +38,7 @@
     <% @category.entries.each do |entry| %>
 <div class="table-card entry-container">
         <div><%= link_to entry.title, entry, class: "entry-title" %></div><br />
-        <div><%= entry.description %></div>
+        <div><%= entry.description.html_safe %></div>
         <td><%# entry.category.title %></td>
         <td><%# link_to 'Show', entry %></td><br />
         <%= link_to '', edit_entry_path(entry), class: "glyphicon glyphicon-edit" %>
