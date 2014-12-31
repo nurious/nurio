@@ -3,10 +3,26 @@
   They will automatically be included in application.css.
 */
 
+
+
+
+/*************************
+*********GENERAL**********
+**************************/
+
+
 .new-category{
 	float: right;
 }
 
 .position-name{
 	margin-top: 50px;
+}
+
+.new-position {
+  margin-bottom: 10px;
+}
+
+.update-btn {
+  margin-bottom: 10px;
 }
