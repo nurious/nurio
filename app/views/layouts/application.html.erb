@@ -11,15 +11,15 @@
 </head>
 
 <header>
-  <nav>
+  <nav class="nav">
     <%= link_to image_tag('nurio logo white.png', size: "300x147", class: "logo"), root_path %>
-  </nav>
     <% if user_signed_in? %>
+  </nav>
       <div class="logged-in">
       <!-- Logged in as  -->
         <strong><%= current_user.email %></strong>
         
-        <p>
+        <p class="rep">
           Reputation: <%= current_user.score %>
         </p>
 

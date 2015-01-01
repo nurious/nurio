@@ -11,13 +11,15 @@
 </head>
 
 <header class="devise-header">
-  <nav>
+  <nav class="nav">
     <%= link_to image_tag('nurio logo white.png', size: "300x147", class: "logo"), root_path %>
-  </nav>
+  </nav class="nav">
+  <div class="logged-in">
     <% if user_signed_in? %>
       <strong><%= current_user.email %></strong><br />
       <%= link_to 'Edit profile', edit_user_registration_path %> |
       <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+  </div>
     <% else %>
       <%= link_to "Sign up", new_user_registration_path %> |
       <%= link_to "Login", new_user_session_path %>
