@@ -36,15 +36,16 @@
   </div>
 
     <% @category.entries.each do |entry| %>
-<div class="table-card entry-container">
+      <div class="table-card entry-container">
         <div><%= link_to entry.title, entry, class: "entry-title" %></div><br />
         <div><%= entry.description.html_safe %></div>
-        <td><%# entry.category.title %></td>
-        <td><%# link_to 'Show', entry %></td><br />
+        <br>
         <%= link_to '', edit_entry_path(entry), class: "glyphicon glyphicon-edit" %>
         <%= link_to '', entry, method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-trash" %>
-        <%=  %>
-</div>
+      </div>
+        <div class="created-by text-center">
+          Created by <%= entry.user.email %> <%= time_ago_in_words(entry.created_at) %> ago.
+        </div>
     <% end %>
 <br>
 

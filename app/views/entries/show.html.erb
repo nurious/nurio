@@ -1,19 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @entry.title %>
-</p>
+<span>
+	<p>
+	  <strong>Title:</strong>
+	  <%= @entry.title %>
+	</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @entry.description %>
-</p>
+	<p>
+	  <strong>Description:</strong>
+	  <%= @entry.description %>
+	</p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @entry.category.title %>
-</p>
+	<p>
+	  <strong>Category:</strong>
+	  <%= @entry.category.title %>
+	</p>
+</span>
 
 <%= link_to 'Edit', edit_entry_path(@entry) %> |
 <%= link_to 'Back', category_path(@entry.category.id) %>
+
