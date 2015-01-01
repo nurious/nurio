@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'leaderboard/show'
+
   mount Bootsy::Engine => '/bootsy', as: 'bootsy'
   devise_for :users
   # resources :entries
