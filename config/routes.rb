@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'splash/index'
+
   get 'leaderboard/show'
 
   mount Bootsy::Engine => '/bootsy', as: 'bootsy'
@@ -58,7 +60,7 @@ resources :entries, except: [:index, :new, :create]
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'organizations#index'
+  root 'splash#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
