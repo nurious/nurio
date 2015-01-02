@@ -66,21 +66,7 @@ li a{
 }
 
 /*Adds gradient on login/signup/edit pages */
-.login {
-background: #b5bdc8; /* Old browsers */
-background: -moz-linear-gradient(-45deg,  #b5bdc8 0%, #828c95 36%, #28343b 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#b5bdc8), color-stop(36%,#828c95), color-stop(100%,#28343b)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(-45deg,  #b5bdc8 0%,#828c95 36%,#28343b 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(-45deg,  #b5bdc8 0%,#828c95 36%,#28343b 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(-45deg,  #b5bdc8 0%,#828c95 36%,#28343b 100%); /* IE10+ */
-background: linear-gradient(135deg,  #b5bdc8 0%,#828c95 36%,#28343b 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5bdc8', endColorstr='#28343b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-background-repeat: no-repeat;
-}
-
-
-/*Adds gradient on login/signup/edit pages */
-body {
+.main-gradient {
 background: #b5bdc8; /* Old browsers */
 background: -moz-linear-gradient(-45deg,  #b5bdc8 0%, #828c95 36%, #28343b 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#b5bdc8), color-stop(36%,#828c95), color-stop(100%,#28343b)); /* Chrome,Safari4+ */

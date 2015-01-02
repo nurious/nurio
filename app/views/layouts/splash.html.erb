@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>nurio</title>
+  <%= csrf_meta_tags %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= favicon_link_tag 'favicon.ico' %>
+  <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Voltaire|Open+Sans' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</head>
+
+  <body  class="splash"> <!-- SPLASH LAYOUT -->
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
+</html>
