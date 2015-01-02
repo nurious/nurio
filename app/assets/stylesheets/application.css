@@ -21,6 +21,15 @@
 *********GENERAL**********
 **************************/
 
+li a{
+  color: #fff;
+}
+
+.nav-stuff{
+  float: right;
+
+}
+
 .container {
   width: 90%;
 }
