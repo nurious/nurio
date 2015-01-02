@@ -47,6 +47,9 @@ li a{
   margin-bottom: 3px;
 }
 
+.btn-primary {
+  background-color: #2574A9;
+}
 
 /*************************
 ******LOGIN/SIGNUP********
