@@ -79,7 +79,7 @@ background-repeat: no-repeat;
 }
 
 /* This is to make the gradient 100% of the page */
-html, .login, body {
+html, .main-gradient, body {
   margin: 0px;
   height:100%;
   background-attachment: fixed;
