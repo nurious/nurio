@@ -52,3 +52,6 @@ gem 'binding_of_caller'
 
 # Use Bootsy for WYSIWYG
 gem 'bootsy'
+
+gem 'will_paginate'
+
