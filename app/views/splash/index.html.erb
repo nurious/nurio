@@ -1,7 +1,9 @@
-<div class="splash-logo text-center">
-  <%= image_tag('nurio logo bw.png', size: "800x392") %>
+<div class="animsition splash-logo text-center">
+  <%= image_tag('nurio logo white.png', size: "800x392") %>
 </div>
 
 <br />
 
-<div class="text-center"><%= link_to 'Sign up', new_user_registration_path %> | <%= link_to 'Log in', new_user_session_path %></div>
+<div class="animsition text-center splash-container">
+  <%= link_to 'Sign up', new_user_registration_path, class: "animsition-link splash-links" %> | <%= link_to 'Log in', new_user_session_path, class: "animsition-link splash-links" %>
+</div>

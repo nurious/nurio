@@ -11,3 +11,16 @@
   margin: 200px auto;
   margin-bottom: 0px;
 }
+
+.splash-links {
+  color: #fff;
+}
+
+.splash-container {
+  color: #fff;
+}
+
+.splash-links:hover {
+  color: #5DFC0A;
+  text-decoration: none;
+}
