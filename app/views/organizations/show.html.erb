@@ -1,21 +1,23 @@
 <p id="notice"><%= notice %></p>
 
+<div class="text-center">
+  <h2 class="page-headline"><%= @organization.name %> Departments</h2>
 <p>
-  
-  <h2 class="text-center page-headline"><%= @organization.name %> Departments</h2>
-</p>
-
-<p>
-  
   <h4 class="text-center page-headline"><%= @organization.description %></h4>
 </p>
-  
+  <span class="org-url text-left">
+    <% unless @organization.img_url == nil %>
+      <%= image_tag @organization.img_url, size: "100x70" %>
+    <% end %>
+  </span>
+</div>
+
   <!-- Button trigger modal -->
-  <div class="text-center">
+  <div class="text-center dept-btn">
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
       New Department
     </button>
-  </div><br><br>
+  </div><br>
 
   <!-- Modal -->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
