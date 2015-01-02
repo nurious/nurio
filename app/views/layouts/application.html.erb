@@ -33,7 +33,7 @@
       <!-- Logged in as  -->
         <strong><%= current_user.email %></strong> | 
         <span class="rep">
-          Reputation: <%= current_user.score %>
+          Reputation: <%= number_with_delimiter(current_user.score, :delimiter => ',') %>
         </span>
 
       </div>
