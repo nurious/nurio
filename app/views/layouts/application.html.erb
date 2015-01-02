@@ -13,8 +13,21 @@
 <header>
   <nav class="nav">
     <%= link_to image_tag('nurio logo white.png', size: "300x147", class: "logo"), root_path %>
-    <% if user_signed_in? %>
+    <span class="nav-stuff">
+      <ul class="nav nav-pills">
+        <li role="presentation"><%= link_to 'Leaderboard', leaderboard_show_path %></li>
+        <% if user_signed_in? %>
+          <li role="presentation"><%= link_to 'Departments', organization_path(current_user.organization) %></li>
+          <li role="presentation"><%= link_to 'Edit profile', edit_user_registration_path %></li>
+          <li role="presentation"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li role="presentation"><%= link_to "Sign up", new_user_registration_path %></li>
+          <li role="presentation"><%= link_to "Login", new_user_session_path %></li>
+        <% end %>
+      </ul>
+    </span>
   </nav>
+    <% if user_signed_in? %>
       <div class="logged-in">
       <!-- Logged in as  -->
         <strong><%= current_user.email %></strong>
@@ -23,12 +36,7 @@
           Reputation: <%= current_user.score %>
         </p>
 
-        <%= link_to 'Edit profile', edit_user_registration_path %> |
-        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
       </div>
-    <% else %>
-      <%= link_to "Sign up", new_user_registration_path %> |
-      <%= link_to "Login", new_user_session_path %>
     <% end %>
     
 </header>
