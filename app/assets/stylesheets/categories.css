@@ -14,3 +14,7 @@
   text-align: center;
   width: 100px;
 }
+
+ul > li.prev-btn > a{
+	color: #337ab7;
+}

@@ -11,7 +11,10 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
-    @entries = Entry.all
+    @page = (params[:page] || 1).to_i
+    offset = (@page - 1) * 3
+    @entries = @category.entries.order(created_at: :desc).limit(3).offset(offset).all
+    @pages = @category.entries.count / 3
   end
 
   # GET /categories/new
@@ -67,6 +70,7 @@ class CategoriesController < ApplicationController
   #redirect_to position_categories_url(@category.position)
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_category
       @category = Category.find(params[:id])

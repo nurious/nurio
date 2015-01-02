@@ -35,7 +35,7 @@
     </div>
   </div>
 
-    <% @category.entries.each do |entry| %>
+    <% @entries.each do |entry| %>
       <div class="table-card entry-container">
         <div><%= link_to entry.title, entry, class: "entry-title" %></div><br />
         <div><%= entry.description.html_safe %></div>
@@ -50,8 +50,17 @@
     <% end %>
 <br>
 
-<%# link_to 'New Entry', new_category_entry_path(@category.id) %>
+<%#link_to 'New Entry', new_category_entry_path(@category.id) %>
+<span class="text-center">
+  <ul class="pager">
+    <% unless @page == 1 %>
+      <li class="prev-btn"><%= link_to 'Previous page', page: @page - 1 %></li>
+    <% end %>
+    <% if @page <= @pages  %>
+      <li class="prev-btn"><%= link_to 'Next page', page: @page + 1 %></li>
+    <% end %>
+  </ul>
+</span>
 
-<br>
 
 <%# link_to 'Edit', edit_category_path(@category) %>
