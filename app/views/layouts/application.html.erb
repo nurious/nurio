@@ -30,11 +30,10 @@
     <% if user_signed_in? %>
       <div class="logged-in">
       <!-- Logged in as  -->
-        <strong><%= current_user.email %></strong>
-        
-        <p class="rep">
+        <strong><%= current_user.email %></strong> | 
+        <span class="rep">
           Reputation: <%= current_user.score %>
-        </p>
+        </span>
 
       </div>
     <% end %>
