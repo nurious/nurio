@@ -6,12 +6,14 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= favicon_link_tag 'favicon.ico' %>
   <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/animsition.min.css">
   <link href='https://fonts.googleapis.com/css?family=Voltaire|Open+Sans' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <script src="/assets/jquery.animsition.min.js"></script>
   <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 </head>
-
-<header class="devise-header">
+<div class="animsition">
+  <header class="devise-header">
   <nav class="nav">
     <%= image_tag('nurio logo white.png', size: "200x98", class: "logo") %>
 
@@ -23,8 +25,8 @@
           <li role="presentation"><%= link_to 'Edit profile', edit_user_registration_path %></li>
           <li role="presentation"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
         <% else %>
-          <li role="presentation"><%= link_to "Sign up", new_user_registration_path %></li>
-          <li role="presentation"><%= link_to "Login", new_user_session_path %></li>
+          <li role="presentation"><%= link_to "Sign up", new_user_registration_path, class: "animsition-link" %></li>
+          <li role="presentation"><%= link_to "Login", new_user_session_path, class: "animsition-link" %></li>
         <% end %>
       </ul>
     </span>
@@ -38,4 +40,5 @@
       <%= yield %>
     </div>
   </body>
+</div>
 </html>
