@@ -52,7 +52,7 @@
     </thead>
 
     <tbody>
-      <% @positions.each do |position| %>
+      <% @positions.order(:name).each do |position| %>
         <tr>
           <td><%= link_to position.name, position_path(position) %></td>
           <td><%= position.department.name %></td>
