@@ -37,12 +37,18 @@
 
     <% @entries.each do |entry| %>
       <div class="table-card entry-container">
-        <div><%= link_to entry.title, entry, class: "entry-title" %></div><br />
-        <div><%= truncate(entry.description.html_safe, length: 140, escape: false) %></div>
+        <div>
+          <%= link_to entry.title, entry, class: "entry-title" %>
+        </div><br/>
+        <div>
+          <%= truncate(entry.description.html_safe, length: 140, escape: false) %>
+        </div>
         <br>
-        <%= link_to '', edit_entry_path(entry), class: "glyphicon glyphicon-edit" %>
-        <%= link_to '', entry, method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-trash" %>
-        <div class="back-btn"><%= link_to 'Back', position_path(@category.position_id) %></div>
+          <%= link_to '', edit_entry_path(entry), class: "glyphicon glyphicon-edit" %>
+          <%= link_to '', entry, method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-trash" %>
+        <div class="back-btn">
+          <%= link_to 'Back', position_path(@category.position_id) %>
+        </div>
       </div>
         <div class="created-by text-center">
           Created by <%= entry.user.email %> <%= time_ago_in_words(entry.created_at) %> ago.
