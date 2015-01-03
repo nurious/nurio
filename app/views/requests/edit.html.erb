@@ -1,6 +1,10 @@
-<h1>Editing request</h1>
+<h1 class="page-headline text-center">Edit request</h1>
 
-<%= render 'edit_form' %>
+<div class="table-card text-center">
+  <%= render 'edit_form' %>
 
-<%= link_to 'Show', @request %> |
-<%= link_to 'Back', requests_path %>
+  <div class="text-center">
+    <%= link_to 'Show', @request %> |
+    <%= link_to 'Back', requests_path %>
+  </div>
+</div>
