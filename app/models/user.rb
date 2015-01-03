@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
 
   belongs_to :organization
   has_many :entries, dependent: :destroy
+  has_many :requests
 end
