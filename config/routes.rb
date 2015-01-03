@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :requests
+
   get 'splash/index'
 
   get 'leaderboard/show'
