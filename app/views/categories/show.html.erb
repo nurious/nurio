@@ -38,7 +38,7 @@
     <% @entries.each do |entry| %>
       <div class="table-card entry-container">
         <div><%= link_to entry.title, entry, class: "entry-title" %></div><br />
-        <div><%= truncate(entry.description.html_safe, length: 70, escape: false) %></div>
+        <div><%= truncate(entry.description.html_safe, length: 140, escape: false) %></div>
         <br>
         <%= link_to '', edit_entry_path(entry), class: "glyphicon glyphicon-edit" %>
         <%= link_to '', entry, method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-trash" %>
