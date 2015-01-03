@@ -9,4 +9,26 @@
 
 .request-card {
   width: 70%;
+  padding: 15px;
+}
+
+.show-request {
+  padding: 10px;
+  width: 60%;
+}
+
+.request-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.name-org {
+  border-top: 1px solid #d3d3d3;
+  width: 350px;
+  margin: 0px auto;
+  text-align: center;
+}
+
+.request-desc {
+  margin-bottom: 20px;
 }
