@@ -1,22 +1,28 @@
-<p id="notice"><%= notice %></p>
+<h2 class="page-headline text-center">
+  <%= @entry.category.title %>
+</h2>
 
-<span>
-	<p>
-	  <strong>Title:</strong>
-	  <%= @entry.title %>
-	</p>
 
-	<p>
-	  <strong>Description:</strong>
-	  <%= @entry.description %>
-	</p>
+<div class="table-card show-request">
 
-	<p>
-	  <strong>Category:</strong>
-	  <%= @entry.category.title %>
-	</p>
-</span>
+	<span>
+		<p class="entry-title text-center">
+		  <%= @entry.title %>
+		</p>
 
-<%= link_to 'Edit', edit_entry_path(@entry) %> |
-<%= link_to 'Back', category_path(@entry.category.id) %>
+		<p>
+		  <%= @entry.description.html_safe %>
+		</p>
 
+	</span>
+
+	<div class="name-org">
+		<%= @entry.user.email %>
+	</div>
+
+	<div class="text-center">
+		<%= link_to 'Edit', edit_entry_path(@entry) %> |
+		<%= link_to 'Back', category_path(@entry.category.id) %>
+	</div>
+
+</div>
